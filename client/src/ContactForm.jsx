@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Form, Button } from 'react-bootstrap';
 
 const ContactForm = () => {
   // State to hold form data
@@ -45,39 +46,32 @@ const ContactForm = () => {
 
   return (
     <div>
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" style={{ maxWidth: '500px' }} controlId="formName">
+          <Form.Label>
+            Name <span style={{ color: 'red' }}>*</span>
+          </Form.Label>
+          <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" required />
+        </Form.Group>
+      
+        <Form.Group className="mb-3" style={{ maxWidth: '500px' }} controlId="formEmail">
+          <Form.Label>
+            Email <span style={{ color: 'red' }}>*</span>
+          </Form.Label>
+          <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" required />
+        </Form.Group>
+      
+        <Form.Group className="mb-3" style={{ maxWidth: '500px' }} controlId="formMessage">
+          <Form.Label>
+            Message <span style={{ color: 'red' }}>*</span>
+          </Form.Label>
+          <Form.Control as="textarea" name="message" rows={3} value={formData.message} onChange={handleChange} required />
+        </Form.Group>
+        
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
 
       {/* Display status message */}
       {statusMessage && <p>{statusMessage}</p>}
