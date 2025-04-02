@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json()); // Parse incoming JSON requests
 
-// Example route: Home
+// Test route
 app.get("/", (req, res) => {
     res.send("Welcome to the Express Server!");
 });
