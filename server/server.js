@@ -16,6 +16,29 @@ app.get("/", (req, res) => {
     res.send("Welcome to the Express Server!");
 });
 
+// Route to calculate price based on answers
+const calculatePrice = (totalPoints) => {
+    if (totalPoints <=6) return 7000;
+    if (totalPoints >= 7 && totalPoints <= 11) return 15000;
+    return 30000;
+}
+
+app.post('/calculate-price', (req, res) => {
+    const { answers } = req.body;
+
+    if (!Array.isArray(answers) || answers.length !== 5) {
+        return res.status(400).json({ error: "Invalid input, must provide 5 answers" });
+    }
+    const points = answers.reduce((total, answer) => {
+        if (answer === "low") return total + 1;
+        if (answer === "medium") return total + 2;
+        if (answer === "high") return total + 3;
+        return total;
+    }, 0);
+    const price = calculatePrice(points);
+    res.json({ totalPoints: points, price });
+});
+
 // Connect to MongoDB
 const dbURI = 'mongodb://localhost:27017/Electromagnet-contact-db'; 
 mongoose

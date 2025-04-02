@@ -7,6 +7,7 @@ import myImage2 from 'C:\\Users\\rpsev\\Documents\\my-app\\client\\src\\componen
 import myImage3 from 'C:\\Users\\rpsev\\Documents\\my-app\\client\\src\\components\\desk.png';
 import CertificationCard from './components/CertificationCard';
 import ContactForm from './ContactForm';
+import EstimateCalculator from './EstimateCalculator';
 
 
 function App() {
@@ -112,7 +113,7 @@ function App() {
         <div className="my-5"></div>
           <p style={{ fontSize: '1.2rem' }}>
           To help you understand the cost of our services, please fill in the below form to receive an estimate on the screen. Please note that the actual price will be confirmed upon a closer inspection of your equipment.</p>
-                
+          <EstimateCalculator/> 
           </section>
         <div className="my-5"></div>
         <section id="contact">
