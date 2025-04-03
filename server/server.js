@@ -38,9 +38,15 @@ app.post('/calculate-price', (req, res) => {
     const price = calculatePrice(points);
     res.json({ totalPoints: points, price });
 });
-
+// Middleware to check MongoDB connection
+app.use((req, res, next) => {
+  if (mongoose.connection.readyState !== 1) {
+    return res.status(500).json({ error: "Database connection lost" });
+  }
+  next();
+});
 // Connect to MongoDB
-const dbURI = 'mongodb://localhost:27017/Electromagnet-contact-db'; 
+const dbURI = 'mongodb+srv://rpsevodska:9qYnvidVQit6LCkD@cluster0.iqt83ff.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
