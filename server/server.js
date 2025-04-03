@@ -46,11 +46,11 @@ app.use((req, res, next) => {
   next();
 });
 // Connect to MongoDB
-const dbURI = 'mongodb+srv://rpsevodska:9qYnvidVQit6LCkD@cluster0.iqt83ff.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; 
+const dbURI = 'mongodb+srv://rpsevodska:9qYnvidVQit6LCkD@cluster0.iqt83ff.mongodb.net/electromagnet-db?retryWrites=true&w=majority&appName=Cluster0'; 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log("Failed to connect to MongoDB:", err));
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.log("Failed to connect to MongoDB Atlas:", err));
 
 // Create a Contact schema and model
 const contactSchema = new mongoose.Schema({
@@ -61,7 +61,7 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model("Contact", contactSchema);
 
-// Example route: Contact Form (Save to Database)
+// Route: Contact Form (Save to Database)
 app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
