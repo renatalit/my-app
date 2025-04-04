@@ -3,7 +3,7 @@ import AppNavbar from './components/AppNavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from 'react-bootstrap';
 import myImage from './components/net.jpg';
-import myImage2 from './components/engineer.jpg';
+//import myImage2 from './components/engineer.jpg';
 import myImage3 from './components/desk.png';
 import CertificationCard from './components/CertificationCard';
 import ContactForm from './ContactForm';
