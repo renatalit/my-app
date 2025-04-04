@@ -51,27 +51,14 @@ function App() {
         <div className="my-5"></div>
         <section id="about">
           <h2>About us</h2>
-        <div className="my-5"></div>
-        <Card 
-          className="mb-3" 
-          style={{ display: 'flex', flexDirection: 'row', width: '100%' }}
-        >
-          <Card.Img 
-            variant="left" 
-            src={myImage2} 
-            style={{ width: '40%' }} 
-          />
-          <Card.Body>
-            <Card.Text style={{ fontSize: '1.2rem' }}>
-              <p>We are a team of highly experienced electricalS engineers, who specialize in equipment certification testing. 
-              Your equipment can be high complexity and low complexity products such as consumer or industrial tools e.g. toys, industrial instruments, consumer electronics, power distribution.
-              In the case of certification failure, we provide a detailed report on the issues and suggest solutions that will help you pass the testing in the future.</p>
-              <p>Our mission is to provide the best service to our customers and help them get their products certified. We want to be transparent with our customers and encourage you to take 
-              advantage of our free online tool that will help you calculate certification testing costs even before you decide to reach out to us.</p>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        </section>
+          <div className="my-5"></div>
+          <p style={{ fontSize: '1.2rem' }}>
+          We are a team of highly experienced electricalS engineers, who specialize in equipment certification testing. 
+          Your equipment can be high complexity and low complexity products such as consumer or industrial tools e.g. toys, industrial instruments, consumer electronics, power distribution.
+          In the case of certification failure, we provide a detailed report on the issues and suggest solutions that will help you pass the testing in the future.</p>
+          <p>Our mission is to provide the best service to our customers and help them get their products certified. We want to be transparent with our customers and encourage you to take 
+          advantage of our free online tool that will help you calculate certification testing costs even before you decide to reach out to us.</p>
+          </section>
         <div className="my-5"></div>
         <section id="services">
           <h2>Certifications</h2>
