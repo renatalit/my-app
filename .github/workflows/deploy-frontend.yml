@@ -1,0 +1,36 @@
+name: Deploy React Frontend to S3
+
+on:
+  push:
+    branches:
+      - main  # Runs when pushing to `main` branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: client  # Adjust this if your frontend is in another folder
+
+      - name: Build React App
+        run: npm run build
+        working-directory: client
+
+      - name: Deploy to S3
+        uses: aws-actions/s3-sync-action@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1  # Change if your bucket is in another region
+          bucket: electromagnet-bucket
+          source-dir: client/build
