@@ -1,6 +1,3 @@
-provider "aws" {
-  region = "us-east-1" # my region
-}
 
 #######################
 # FRONTEND - S3 bucket

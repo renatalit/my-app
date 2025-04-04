@@ -3,13 +3,9 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "5.40.0"
+      region = "us-east-2"
+      shared_credentials_files = ["/home/vagrant/.aws/credentials"]
     }
   }
 }
 
-# Configure the AWS Provider
-provider "aws" {
-  # Change this region to match your default region!!!!!!!!!!!!! # it matches
-  region = "us-east-2"
-  shared_credentials_files = ["/home/vagrant/.aws/credentials"]
-}
