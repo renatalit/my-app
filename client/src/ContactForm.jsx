@@ -27,7 +27,7 @@ const ContactForm = () => {
 
     try {
       // Send form data to backend (Express server)
-      const response = await axios.post('https://http://electromagnet-app-env.eba-nxqda3nj.us-east-2.elasticbeanstalk.com//calculate-price', formData);
+      const response = await axios.post('http://electromagnet-app-env.eba-nxqda3nj.us-east-2.elasticbeanstalk.com//calculate-price', formData);
 
       // If form submission is successful
       if (response.data.success) {
