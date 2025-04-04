@@ -24,7 +24,7 @@ const EstimateCalculator = () => {
     // Submit answers to backend
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://electromagnet-app-env.eba-nxqda3nj.us-east-2.elasticbeanstalk.com//calculate-price', { answers });
+            const response = await axios.post('http://electromagnet-app-env.eba-nxqda3nj.us-east-2.elasticbeanstalk.com/calculate-price', { answers });
             setPrice(response.data.price);
         } catch (error) {
             console.error("Error calculating price:", error);
