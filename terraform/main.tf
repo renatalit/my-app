@@ -1,5 +1,6 @@
 provider "aws" {
   region = "us-east-1"
+  shared_credentials_files = ["/home/vagrant/.aws/credentials"]
 }
 #######################
 # FRONTEND - S3 bucket
