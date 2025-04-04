@@ -287,6 +287,15 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+
+# React build
+client/build/
+
 # Visual Studio 6 build log
 *.plg
 
