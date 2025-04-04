@@ -287,7 +287,10 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
-
+# Terraform
+terraform.tfstate
+terraform.tfvars
+.terraform/
 
 # React build
 client/build/
