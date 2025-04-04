@@ -28,6 +28,12 @@ jobs:
           cd client
           npm install
           npm run build
+      
+      # Debugging step to check if the build was successful
+      - name: Debug Secrets
+        run: echo "S3 Bucket is $AWS_S3_BUCKET"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
       # Deploy to S3
       - name: Deploy to S3
@@ -35,8 +41,9 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.ELECTROMAGNET_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.ELECTROMAGNET_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1  # Change to your AWS region
-          SOURCE_DIR: client/build  # Path to the build directory
-          DEST_DIR: s3://electromagnet-bucket  # Your S3 bucket name
+          SOURCE_DIR: './client/build'  # Path to the build directory
+          
