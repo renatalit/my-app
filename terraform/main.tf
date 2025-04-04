@@ -52,7 +52,7 @@ resource "aws_elastic_beanstalk_application" "backend" {
 resource "aws_elastic_beanstalk_environment" "backend_env" {
   name                = "my-backend-electromagnet-env"
   application         = aws_elastic_beanstalk_application.backend.name
-  solution_stack_name = "64bit Amazon Linux 2 v5.8.6 running Node.js 18"
+  solution_stack_name = "Node.js 22 running on 64bit Amazon Linux 2023"
 
   setting {
     namespace = "aws:elasticbeanstalk:environment"
