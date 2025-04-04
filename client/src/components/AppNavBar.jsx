@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import logo from 'C:\\Users\\rpsev\\Documents\\my-app\\client\\src\\components\\Logo.png'; // Your logo image in src folder
+import logo from './components/Logo.png'; // Your logo image in src folder
 
 const AppNavbar = () => {
   return (
